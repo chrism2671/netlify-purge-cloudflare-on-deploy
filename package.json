@@ -1,5 +1,25 @@
 {
-  "name": "netlify-purge-cloudflare-on-deploy"
-  "version": "1.0.0"
-  "author": "Chris Muktar <chris@wikijob.co.uk> (https://www.wikijob.co.uk)"
+  "name": "netlify-purge-cloudflare-on-deploy",
+  "version": "1.0.0",
+  "description": "Automatically purge Cloudflare cache on Netlify deploy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrism2671/netlify-purge-cloudflare-on-deploy.git"
+  },
+  "keywords": [
+    "cloudflare",
+    "netlify",
+    "cache",
+    "purge"
+  ],
+  "author": "Chris Muktar <chris@wikijob.co.uk> (https://www.wikijob.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrism2671/netlify-purge-cloudflare-on-deploy/issues"
+  },
+  "homepage": "https://github.com/chrism2671/netlify-purge-cloudflare-on-deploy#readme"
 }
