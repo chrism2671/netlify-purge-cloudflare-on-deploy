@@ -1,0 +1,12 @@
+name: netlify-purge-cloudflare-cache-on-deploy
+inputs:
+  - name: cloudflareEmail 
+    description: The email address you use to sign in to Cloudflare.
+    required: true
+  - name: zoneId 
+    description: Go to dash.cloudflare.com, sign in, and select your website. The page should show the Zone ID under API in the bottom right of the page.
+    required: true
+  - name: cloudflareApiKey
+    description: Your Cloudflare API key.
+    required: true
+

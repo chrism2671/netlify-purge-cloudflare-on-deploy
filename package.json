@@ -1,0 +1,5 @@
+{
+  "name": "netlify-purge-cloudflare-on-deploy"
+  "version": "1.0.0"
+  "author": "Chris Muktar <chris@wikijob.co.uk> (https://www.wikijob.co.uk)"
+}
