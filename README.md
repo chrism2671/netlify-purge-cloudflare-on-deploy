@@ -7,3 +7,12 @@ From Cloudflare, you'll need:
 * Your Cloudflare API key.
 
 Strictly this plugin triggers the cache purge before deploy (but after build), as this is the only functionality Netlify provides.
+
+## netlify.toml template
+
+    [[plugins]]
+    package = "./plugins/netlify-purge-cloudflare-on-deploy"
+      [plugins.inputs]
+      cloudflareEmail = "cloudflare@email.com"
+      cloudflareApiKey = "yourApiKey"
+      zoneId = "yourZoneId"
