@@ -1,6 +1,6 @@
 {
   "name": "netlify-purge-cloudflare-on-deploy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Automatically purge Cloudflare cache on Netlify deploy.",
   "main": "index.js",
   "scripts": {

@@ -1,5 +1,9 @@
 const fetch = require('node-fetch');
 
+const {
+  env: { CLOUDFLARE_API_KEY, CLOUDFLARE_ZONE_ID, CLOUDFLARE_EMAIL },
+} = require('process');
+
 module.exports = {
   async onEnd({
     inputs,
@@ -8,10 +12,10 @@ module.exports = {
     },
   }) {
     console.log('Preparing to trigger Cloudflare cache purge');
-    let baseUrl = `https://api.cloudflare.com/client/v4/zones/${inputs.zoneId}/purge_cache`;
+    let baseUrl = `https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache`;
     let headers = {
-      'X-Auth-Email': inputs.cloudflareEmail,
-      'X-Auth-Key': inputs.cloudflareApiKey,
+      'X-Auth-Email': CLOUDFLARE_EMAIL,
+      'X-Auth-Key': CLOUDFLARE_API_KEY,
       'Content-Type': 'application/json',
     };
     let body = { purge_everything: true };
