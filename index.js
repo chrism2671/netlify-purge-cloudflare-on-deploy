@@ -5,11 +5,13 @@ const {
 } = require('process');
 
 module.exports = {
-  onPreBuild: ({utils}) =>
-    if(!CLOUDFLARE_API_KEY || !CLOUDFLARE_ZONE_ID || !CLOUDFLARE_EMAIL) {
-      return utils.build.failBuild('You need to add CLOUDFLARE_API_KEY, CLOUDFLARE_ZONE_ID and CLOUDFLARE_EMAIL to your Netlify environment variables.') 
+  onPreBuild: ({ utils }) => {
+    if (!CLOUDFLARE_API_KEY || !CLOUDFLARE_ZONE_ID || !CLOUDFLARE_EMAIL) {
+      return utils.build.failBuild(
+        'You need to add CLOUDFLARE_API_KEY, CLOUDFLARE_ZONE_ID and CLOUDFLARE_EMAIL to your Netlify environment variables.'
+      );
     }
-  }
+  },
   async onEnd({
     inputs,
     utils: {
