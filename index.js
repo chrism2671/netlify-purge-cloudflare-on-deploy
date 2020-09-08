@@ -16,13 +16,11 @@ switch( true ) {
 }
 
 module.exports = {
-  async onEnd({
-                utils: {
-                  build: { failPlugin, failBuild },
-                },
-              }) {
-
-    // Since calling utils.build.failBuild will not actually fail the build in onPreBuild, moved the conditions in onPreBuild.
+  onPostBuild({
+    utils: {
+      build: { failBuild },
+    },
+  }) {
     if( authMethod === 'na' ) {
       return failBuild(
           'Could not determine auth method.  Please review the plugin README file and verify your environment variables'
@@ -36,7 +34,12 @@ module.exports = {
     else {
       console.log('Cloudflare ' + authMethod + ' Authentication method detected.');
     }
-
+  },
+  async onSuccess({
+                utils: {
+                  build: { failPlugin },
+                },
+              }) {
     console.log('Preparing to trigger Cloudflare cache purge');
     let baseUrl = `https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache`;
     let headers;
@@ -72,7 +75,7 @@ module.exports = {
       }
       console.log('Cloudflare cache purged successfully!');
     } catch (error) {
-      return failBuild('Cloudflare cache purge failed', { error });
+      return failPlugin('Cloudflare cache purge failed', { error });
     }
   },
 };
