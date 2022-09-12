@@ -2,7 +2,6 @@
 Automatically purge Cloudflare cache on Netlify deploy.
 
 ## NOTES:
-* Strictly this plugin triggers the cache purge before deploy (but after build), as this is the only functionality Netlify provides.
 * Cloudflare supports two methods of authentication.  API TOKEN (Recommended) and API KEY (Legacy).
 * In the event the plugin finds both API Token and API Key environment variables, it will default to using API Token as this is the recommended method of authentication.
 
