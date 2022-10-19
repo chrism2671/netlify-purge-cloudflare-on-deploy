@@ -55,3 +55,8 @@ Check you set up your environment variables properly.
 
     [[plugins]]
     package = "./plugins/netlify-purge-cloudflare-on-deploy"
+
+## netlify.toml template if you receive an error.
+
+    [[plugins]]
+    package = "netlify-purge-cloudflare-on-deploy"
